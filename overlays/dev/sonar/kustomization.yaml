@@ -1,0 +1,44 @@
+bases:
+- ../../../base
+
+namePrefix: {name_application}- #sample : sonar-
+
+patches:
+# endpoints
+  - patch: |
+      - op: replace
+        path: /metadata/name
+        value: "svc"
+    target:
+      kind: Endpoints
+      name: ep
+  - patch: |
+      - op: replace
+        path: /subsets/0/addresses/0/ip
+        value: "192.168.1.2"
+    target:
+      kind: Endpoints
+      name: ep
+  - patch: |
+      - op: replace
+        path: /subsets/0/ports/0/port
+        value: 8080
+    target:
+      kind: Endpoints
+      name: ep
+# ingress
+  - patch: |
+      - op: replace
+        path: /spec/rules/0/host
+        value: sonar.dodol.com
+    target:
+      kind: Ingress
+      name: ing
+# service
+  - patch: |
+      - op: replace
+        path: /spec/ports/0/targetPort
+        value: 8080
+    target:
+      kind: Service
+      name: svc

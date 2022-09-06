@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ing
+  namespace: ingress-pool # just a sample you can use any name
+  annotations:
+    kubernetes.io/ingress.class: nginx-external # you can use your ingress , that is just a sample 
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/whitelist-source-range: 192.0.0.0/16 # IP whitelist just sample
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  rules:
+  - host: sample.dodol.com
+    http:
+     paths:
+     - path: /
+       pathType: ImplementationSpecific
+       backend:
+         service:
+           name: svc
+           port:
+             number: 443
