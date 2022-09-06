@@ -10,7 +10,7 @@
 ## Provision Instructions
 
 ```
- kustomize build .                          #--> check manifest to make sure the manifest is correct
+ kustomize build .                #--> check manifest to make sure the manifest is correct
  
 
 apiVersion: v1
