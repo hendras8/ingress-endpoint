@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ingress-pool
+  name: ingress-pool # just a sample you can use any name
