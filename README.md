@@ -1,5 +1,9 @@
 # ingress-endpoint
 
+   ![infrastructure-Diagram-Page-6 drawio](https://user-images.githubusercontent.com/94831193/188553478-7363424d-1543-45bc-967f-9f5445576d46.png)
+   
+   the case I made was to create an ingress followed by an endpoint to point to the vm , and you can also use to point to the pod .
+
 ## Requirements
 
 | Name | Version |
