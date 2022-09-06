@@ -3,7 +3,7 @@ kind: Endpoints
 metadata:
   # the name here should match the name of the Service
   name: ep
-  namespace: ingress-pool
+  namespace: ingress-pool # just a sample you can use any name
 subsets:
   - addresses:
       - ip: 172.0.0.0
